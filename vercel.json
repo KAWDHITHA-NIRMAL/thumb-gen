@@ -2,10 +2,6 @@
   "buildCommand": "bun run build",
   "installCommand": "bun install",
   "outputDirectory": "dist",
-  "env": {
-    "NODE_VERSION": "18",
-    "NPM_FLAGS": "--production=false"
-  },
   "headers": [
     {
       "source": "/(.*)",
