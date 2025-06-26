@@ -42,7 +42,7 @@
   ],
   "functions": {
     "app/api/**/*.js": {
-      "runtime": "@vercel/node"
+      "runtime": "@vercel/node@18"
     }
   }
 }
