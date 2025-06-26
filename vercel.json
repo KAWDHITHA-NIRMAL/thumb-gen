@@ -29,7 +29,7 @@
       ]
     },
     {
-      "source": "/.*\\.(js|css|png|jpg|svg)",
+      "source": "/.*\\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -38,17 +38,14 @@
       ]
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "functions": {
-    "functions/**/*.js": {
+    "api/**/*.js": {
       "runtime": "@vercel/node"
     }
   }
