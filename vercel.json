@@ -4,15 +4,6 @@
   "framework": "vite",
   "installCommand": "bun install",
   "devCommand": "bun run dev",
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
