@@ -1,7 +1,18 @@
 {
   "buildCommand": "bun run build",
-  "installCommand": "bun install",
   "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "bun install",
+  "devCommand": "bun run dev",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -29,7 +40,7 @@
       ]
     },
     {
-      "source": "/.*\\.(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)",
+      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
       "headers": [
         {
           "key": "Cache-Control",
@@ -38,14 +49,8 @@
       ]
     }
   ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "functions": {
-    "api/**/*.js": {
+    "app/api/**/*.js": {
       "runtime": "@vercel/node"
     }
   }
